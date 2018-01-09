@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对元素进行数据存储</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		div{
+			background: #141eb8;
+			color: #fff;
+
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("#btn1").click(function(){
+				$("div").data("x","Actions speak louder than words.")
+			});
+			$("#btn2").click(function(){
+				alert($("div").data("x"))
+			})
+		})
+	</script>
+</head>
+<body>
+	<input id="btn1" type="button" value="哈哈点击存储数据" class="btn btn-success">
+	<input id="btn2" type="button" value="哈哈点击获取数据" class="btn btn-danger">
+	<div>事实胜于雄辩。</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态选中复选框</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("button:eq(0)").click(function(){
+				if($("input").prop("checked")){
+					$("input").prop("checked",false);
+				}else{
+					$("input").prop("checked",true);
+				}
+			})
+			$("button:eq(1)").click(function(){
+				$("input").each(function(){
+					this.checked = !this.checked;
+				})
+			})
+		});
+	</script>
+	<style>
+		button{
+			margin: 15px;
+		}
+		input{
+			margin: 40px;
+		}
+		.page-header{
+			font: 20px 微软雅黑;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<p>
+		<h4 class="page-header">When you fall down,<br> you just gotta get back up and keep on going,<br> there is no sense in just sitting in.<br>按钮控制checkbox选择与反选：</h4>
+		<button class="btn btn-primary">Actions speak louder than words.</button><br>
+		<button class="btn btn-danger">反选</button>
+	</p>
+	<p>
+		<input type="checkbox" value="1" name="c1"> 项目一<br>	
+		<input type="checkbox" value="2" name="c1"> 项目二<br>	
+		<input type="checkbox" value="3" name="c1"> 项目三<br>	
+		<input type="checkbox" value="4" name="c1"> 项目四<br>	
+		<input type="checkbox" value="5" name="c1"> 项目五<br>			
+	</p>
+
+</div>
+</body>
+</html>

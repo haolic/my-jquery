@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="div1">ddddddddddd</div>
+  <button id="btn">dddd</button>
+  <script type="text/javascript">
+    btn.onclick = function () {
+      handleCopy();
+    }
+    function handleCopy() {
+      var val = $('#div1').html();
+      $('body').append('<div style="height: 1px; overflow: hidden" id="tempDiv"><input value=' + val + ' id="tempInput" /></div>');
+      $("#tempInput").get(0).select();
+      document.execCommand("Copy"); // 执行浏览器复制命令
+      $('body').find('#tempDiv').remove();
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div>
+	    <input type="checkbox" id="chkType" /><label for="chkType" id="iblType">类型</label>
+	    <button id="btnSelect">选择</button>
+	 </div>
+	<script>
+		$("#btnSelect").click(function(){
+			if($("#chkType").prop("checked")){
+				$("#chkType").prop("checked", false);
+			}else{
+				$("#chkType").prop("checked", true);
+			};
+		});
+	</script>
+</body>
+</html>

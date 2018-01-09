@@ -1,0 +1,64 @@
+#container{
+	width: 520px;
+	height: 293px;
+	border: 2px solid #090;
+	margin: 0 auto;
+	position: relative;
+	top: 150px;
+	overflow: hidden;
+}
+#imgs{
+	width: 3640px;
+	height: 293px;
+	position: absolute;
+	z-index: 1;
+}
+#imgs img{
+	float: left;
+}
+#spans{
+	width: 108px;
+	height: 20px;
+	background: url(../imgs/dot_bg.png) no-repeat;
+	position: absolute;
+	z-index: 2;
+	bottom: 15px;
+	left: 220px;
+}
+#spans span{
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin-top: 5px;
+	margin-left: 9px;
+	background: url(../imgs/dot.png) no-repeat;
+	cursor: pointer;
+}
+#spans span.active{
+	background: url(../imgs/dotActive.png) no-repeat;
+}
+#prev{
+	left: 0px;
+	background: url(../imgs/prev.png);
+}
+#next{
+	right: 0px;
+	background: url(../imgs/next.png);
+}
+#next:hover{
+	background: url(../imgs/_next.png);
+}
+#prev:hover{
+	background: url(../imgs/_prev.png);
+}
+#container:hover .button{
+	display: block;
+}
+.button{
+	position: absolute;
+	width: 30px;
+	height: 60px;
+	top: 100px;
+	z-index: 2;
+	display: none;
+}

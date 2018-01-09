@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单控制</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		@media screen and (max-width: 700px) {
+			.block{
+				width: 100%;
+			}			
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("#clearall").click(function(){
+				$("input:password,input:text,textarea").val("");
+				$("input:radio,input:checkbox").prop("checked",false);
+				$("select").children("option:eq(0)").prop("selected",true)
+			})
+		})
+	</script>
+</head>
+<!-- By_Haolichong2017.7.24 -->
+<body>
+	<div class="container">
+		<h2 class="page-header">表单控制:<small>（响应式：缩放窗口查看按钮与输入框效果）</small></h2>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form action="#">
+					<div class="form-group">
+						<label for="userNamae">用户名：</label>
+						<input class="form-control" type="text" name="userName" id="userName" placeholder="请输入用户名" maxlength="10">
+					</div>
+
+					<div class="form-group">
+						<label for="pwd">密码：</label>
+						<input class="form-control" type="password" name="pwd" id="pwd" placeholder="请输入密码：" maxlength="22">
+					</div>
+
+					<div class="form-group">
+						<label for="sex">性别：</label>
+						<p>
+							<input type="radio" name="sex" id="sex">男&nbsp;
+							<input type="radio" name="sex" id="sex">女&nbsp;
+							<input type="radio" name="sex" id="sex" checked>保密							
+						</p>
+					</div>
+
+					<div class="form-group">
+						<label for="xueli">学历：</label>
+						<p>
+							<input type="radio" name="xueli" id="xueli">大专&nbsp;
+							<input type="radio" name="xueli" id="xueli" checked>本科&nbsp;
+							<input type="radio" name="xueli" id="xueli">研究生&nbsp;
+							<input type="radio" name="xueli" id="xueli">博士							
+						</p>
+
+					</div>
+
+					<div class="form-group">
+						<label for="question">找回密码问题：</label>
+						<select class="form-control" name="question" id="question">
+							<option value="no" selected>请选择</option>
+							<option value="ys">你最喜欢的颜色</option>
+							<option value="sw">你最喜欢的食物</option>
+							<option value="teacher">你的启蒙老师</option>
+							<option value="address">你家乡的地址</option>
+							<option value="lover">你喜欢的人的名字</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="answer">找回密码答案</label>
+						<input class="form-control" type="text" name="answer" id="answer" placeholder="请输入答案：" maxlength="22">
+					</div>
+					<div class="form-group">
+						<label for="gongkai">是否公开资料：</label>
+						<input type="checkbox">公开
+					</div>
+					<div class="form-group">
+						<label for="self">自我描述</label>
+						<textarea name="self" id="self" cols="30" rows="10" class="form-control" placeholder="请输入自我简介">When you fall down, you just gotta get back up and keep on going, there is no sense in just sitting in.
+						</textarea>
+					</div>
+					<div class="form-group">
+						<input class="btn btn-danger block" id="clearall" type="button" value="清空">
+						<input class="btn btn-warning block" type="reset" value="重置">
+						<input class="btn btn-success block" type="submit" value="提交">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- By_Haolichong2017.7.24 -->
+</html>

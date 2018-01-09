@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		#draggable{
+			width: 50px;
+			height:50px;
+			background: #090;
+			color: #fff;
+			float: left;
+		}
+		#droppable{
+			width: 100px;
+			height: 100px;
+			float: left;
+			margin: 200px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#draggable").draggable();
+			$("#droppable").droppable({
+				drop:function(event,ui){
+					$(this)
+					.addClass("ui-state-highlight")
+					.find("p").html("OK!!")
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div id="draggable" class="ui-widget-content">
+			<p>拖拽一下</p>	
+		</div>
+		<div id="droppable" class="ui-widget-header">
+			<p>拖动到这里</p>
+		</div>
+	</div>
+</body>
+</html>

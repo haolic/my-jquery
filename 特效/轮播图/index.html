@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/scroll.js"></script>
+	<style>
+		ul{
+			padding: 0px;
+			margin: 0px;
+			list-style: none;
+		}
+		#outter{
+			width: 520px;
+			height: 293px;
+			margin: 0 auto;
+			position: relative;
+		}
+		#dots{
+			width: 100px;
+			height: 10px;
+			position: absolute;
+			bottom: 20px;
+			left: 220px;
+			z-index: 2;
+		}
+		#dots li{
+			background: url(imgs/dot.png) no-repeat;
+			float:left;
+			margin-right: 10px;
+			width: 10px;
+			height: 10px;			
+			cursor: pointer;
+		}
+		#dots li.active{
+			background: url(imgs/dotActive.png) no-repeat;
+		}
+		.button{
+			width: 30px;
+			height: 60px;
+			position: absolute;
+			top: 110px;
+			display: none;
+		}
+		#outter:hover .button{
+			display: block;
+		}
+		#prev{
+			background: url(imgs/prev.png);
+			right: 0px;
+		}
+		#next{
+			background: url(imgs/next.png);
+			left: 0;
+		}
+		#prev:hover{
+			background: url(imgs/_prev.png);
+		}
+		#next:hover{
+			background: url(imgs/_next.png);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="outter">
+			<img src="imgs/1.jpg" alt="" id="img">
+			<a href="javascript:;" id="prev" class="button"></a>
+			<a href="javascript:;" id="next" class="button"></a>
+			<ul id="dots">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

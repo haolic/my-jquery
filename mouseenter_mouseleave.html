@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseenter_mouseleave</title>
+	<style>
+		#div1{
+			background: #ff0;
+			width: 300px;
+			height: 300px;
+			position: relative;
+			text-align: center;
+		}
+		#div2{
+			background: #090;
+			width: 150px;
+			position: absolute;
+			height: 150px;
+			top: 50%;
+			margin-top: -75px;
+			margin-left: 75px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("#div1").mouseleave(function(){//mouseleave不会触发冒泡.
+				alert();
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<div id="div2"></div>
+	</div>
+</body>
+</html>

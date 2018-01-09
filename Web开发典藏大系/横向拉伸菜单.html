@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>横向拉伸菜单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		*{
+			font: 20px arial;
+		}
+		p{
+			width: 30px;
+			height: 30px;
+			margin-bottom: 30px;
+			position: relative;
+			overflow: hidden;
+			padding: 5px 5px 7px 5px;
+			border-radius: 10px;
+		}
+		p span.menu{
+			position: absolute;
+			top: 3px;
+			left: 20px;
+			display: block;/*p不可以包裹div或h3所以用span加display:block;*/
+			width: 500px;
+			float: left;
+			margin-right: 10px;
+		}
+		p span.glyphicon{
+			width: 30px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("p:not(#special)").mouseenter(function(){
+				$(this).stop().animate({"width":"130px"},200,"swing");
+			});
+			$("p:not(#special)").mouseleave(function(){
+				$(this).stop().animate({"width":"30px"});
+			});	
+			$("#special").mouseenter(function(){
+				$(this).stop().animate({"width":"350px"});
+			});
+			$("#special").mouseleave(function(){
+				$(this).stop().animate({"width":"30px"});
+			});
+		});
+	</script>
+</head>
+<!-- By_Haolichong2017.7.24 -->
+<body>
+	<div class="container">
+		<h2 class="page-header">横向拉伸菜单:</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<p class="text-danger bg-info"><span class="glyphicon glyphicon-paperclip"></span><span class="menu">&nbsp;&nbsp;添加收藏</span></p>
+				<p class="text-info bg-danger"><span class="glyphicon glyphicon-link"></span><span class="menu">&nbsp;&nbsp;复制链接</span></p>
+				<p id="special" class="text-primary bg-warning"><span class="glyphicon glyphicon-heart-empty"></span><span class="menu">&nbsp;&nbsp;Actions speak louder than words.</span></p>
+				<p class="bg-primary"><span class="glyphicon glyphicon-thumbs-up"></span><span class="menu">&nbsp;&nbsp;点个赞</span></p>
+				
+			</div>
+		</div>
+	</div>
+</body>
+<!-- By_Haolichong2017.7.24 -->
+</html>

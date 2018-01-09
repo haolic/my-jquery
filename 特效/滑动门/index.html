@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动门</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		#div1{
+			width: 402px;
+			height: 436px;
+			margin: 0 auto;
+			border: 1px solid #f00;
+			position: relative;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			float: left;
+		}
+		li button{
+			width: 100px;
+		}
+		li div{
+			position: absolute;
+			top: 34px;
+			left: 0px;
+			background: #31b0d5;
+			width: 400px;
+			height: 400px;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("li").mouseenter(function(){
+				$(this).children("button").next().slideDown(100).end().parent().siblings().children("button").next().slideUp(100);
+			})
+			$("li").mouseleave(function(){
+				$(this).children("div").slideUp(100);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div id="div1">
+			<ul>
+				<li>
+					<button class="btn btn-primary">when you</button>
+					<div>fall down,</div>
+				</li>
+				<li>
+					<button class="btn btn-warning">you just</button>
+					<div>gotta get</div>
+				</li>
+				<li>
+					<button class="btn btn-danger">back up</button>
+					<div>and keep</div>
+				</li>
+				<li>
+					<button class="btn btn-success">on going,</button>
+					<div>there is no sense in just sitting in.</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

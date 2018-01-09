@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自动补全</title>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		#draggable{
+			float: left;
+			background: #090;
+		}
+		p{
+			height: 200px;
+			width: 200px;
+			color: #fff;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#draggable").draggable();
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+	<div id="draggable" class="ui-widget-content">
+		<p>拖拽一下</p>	
+	</div>
+			
+	</div>
+</body>
+</html>

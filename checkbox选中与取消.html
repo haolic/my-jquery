@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="./js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				if($("#c1").prop('checked')){
+					$("#c1").prop('checked',false)
+				}else{
+					$("#c1").prop('checked',true)
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div>
+		<input type="checkbox" id="c1" />
+		<button id="btn">选择/取消</button>
+	</div>
+			
+</body>
+</html>

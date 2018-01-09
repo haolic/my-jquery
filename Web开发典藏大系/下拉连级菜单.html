@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉动画连级菜单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		body{
+			font: 14px 微软雅黑;
+		}
+		.container{
+			position: relative;
+		}
+		p{
+			padding: 10px;
+			margin: 0px;
+			border-radius: 10px;
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		p:hover{
+			background: #2a5696;
+		}
+		ul.first{
+			position: absolute;
+			width: 100%;
+			display: none;
+		}
+		ul li{
+			margin-top: 1px;
+			border-radius: 10px;
+			padding-bottom: 3px;
+			cursor: pointer;
+		}
+		ul li.bg-success:hover{
+			background: #17a05d;
+		}
+		.menu{
+			width: 100%;
+			text-align: center;
+			position: relative;
+		}
+		span{
+			font-size: 14px;
+
+		}
+		li.second{
+			position:absolute;
+			left: 100%;
+			top: 0px;
+			width: 100%;
+			z-index: 2;
+			display:none;
+		}
+		li.second ul li:hover{
+			background: #f2d67e;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("p").mouseenter(function(){
+				$(this).next().stop().slideDown(100).end().parent().parent().siblings().children("div").children("ul").stop().slideUp(100);
+			});
+			$("div.menu").mouseleave(function(){
+				$(this).children("ul").stop().slideUp(100);
+			});
+			$(".menu").children("ul").children(".bg-success").mouseenter(function(){
+				$("li.second").hide("fast");
+				$(this).next().show("fast");
+			});
+			$(".menu").children("ul").children(".bg-success").next().mouseleave(function(){
+				$("li.second").hide("fast");
+				
+			});
+		});
+	</script>
+</head>
+<!-- By_Haolichong2017.7.24 -->
+<body>
+	<div class="container">
+		<h2 class="page-header">下拉连级菜单:</h2>
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul class="first">
+						<li class="bg-success">项目1 <span class="glyphicon glyphicon-play"></span></li>
+						<li class="second">
+							<ul>
+								<li class="bg-warning">When you</li>
+								<li class="bg-warning">fall down</li>
+								<li class="bg-warning">you just</li>
+								<li class="bg-warning">come back</li>
+							</ul>
+						</li>
+						<li class="bg-success">项目2 <span class="glyphicon glyphicon-play"></span></li>
+						<li class="second">
+							<ul>
+								<li class="bg-warning">up and</li>
+								<li class="bg-warning">keep on</li>
+								<li class="bg-warning">going, there</li>
+								<li class="bg-warning">is no sense</li>
+							</ul>
+						</li>
+						<li class="bg-success">项目3 <span class="glyphicon glyphicon-play"></span></li>
+						<li class="second">
+							<ul>
+								<li class="bg-warning">in just sitting</li>
+								<li class="bg-warning">in.</li>
+								<li class="bg-warning">二级项目11</li>
+								<li class="bg-warning">二级项目12</li>
+							</ul>
+						</li>
+						<li class="bg-success">项目4 <span class="glyphicon glyphicon-play"></span></li>
+						<li class="second">
+							<ul>
+								<li class="bg-warning">二级项目13</li>
+								<li class="bg-warning">二级项目14</li>
+								<li class="bg-warning">二级项目15</li>
+								<li class="bg-warning">二级项目16</li>
+							</ul>
+						</li>
+					</ul>				
+				</div>
+			</div>	
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul class="first">
+						<li class="bg-success">项目1</li>
+						<li class="bg-success">项目2</li>
+						<li class="bg-success">项目3</li>
+						<li class="bg-success">项目4</li>
+						<li class="bg-success">项目5</li>
+						<li class="bg-success">项目6</li>
+					</ul>					
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul class="first">
+						<li class="bg-success">项目1</li>
+						<li class="bg-success">项目2</li>
+						<li class="bg-success">项目3</li>
+						<li class="bg-success">项目4</li>
+					</ul>					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- By_Haolichong2017.7.24 -->
+</html>

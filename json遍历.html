@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json遍历</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		button{
+			margin: 30px;
+		}
+		div.b{
+			border: 1px solid #f00;
+			height: 300px;
+			font: 20px arial;
+			margin: 30px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		var json='[{"name":"Actions","age":"speak","sex":"louder"},{"name":"than","age":"words","sex":"Actions"},{"name":"speak","age":"louder","sex":"than"}]'
+		json=$.parseJSON(json);
+		var str="";
+		$.each(json,function(index,value){
+			str+="<p>"+json[index].name+" "+json[index].age+" "+json[index].sex+"</p>";
+		})
+		$("button").click(function(){
+			$("div.b").append(str);
+		})
+	})
+	</script>
+</head>
+<body>
+<div class="container">
+	<button class="btn btn-warning">点击显示数据</button>
+	<div class="b"></div>
+</div>
+	
+</body>
+</html>

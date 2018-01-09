@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜插件</title>
+	<style>
+		img{
+			width: 800px;
+			position: absolute;
+			left:50%;
+			top: 50px;
+			margin-left: -400px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.elevatezoom.js"></script>
+	<script>
+	$(function(){
+		$("#zoom").elevateZoom();
+	})
+	</script>
+</head>
+<body>
+	<img id="zoom" src="img/1small.jpg" data-zoom-image="img/1 (92).jpg">
+</body>
+</html>

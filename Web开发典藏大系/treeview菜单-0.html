@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>treeview</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		*{
+			font: 20px arial;
+		}
+		span{
+			font-size: 16px;
+			cursor: pointer;
+		}
+		ul{
+			list-style: none;
+			display: none;
+		}
+		ul li{
+			position: relative;
+		}
+		h4{
+			border-radius: 5px;
+			padding: 10px;
+		}
+		#innerspan{
+			position: absolute;
+			left: -15px;
+			top: 6px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			var flag=true;
+			var flag2=true;
+			$("span:not(#innerspan)").click(function(){//如果用1.9以下版本jquery，可用$("span").toggle(fn1,fn2)实现。
+				$(this).parent().next().toggle("fast");
+				if(flag){
+					$(this).removeClass().addClass("glyphicon glyphicon-chevron-down");
+					flag=false;
+				}else{
+					$(this).removeClass().addClass("glyphicon glyphicon-chevron-right");
+					flag=true;
+				}
+			});
+			$("#innerspan").click(function(){//如果用1.9以下版本jquery，可用$("span").toggle(fn1,fn2)实现。
+				$(this).parent().next().children().toggle("fast");
+				if(flag2){
+					$(this).removeClass().addClass("glyphicon glyphicon-chevron-down");
+					flag2=false;
+				}else{
+					$(this).removeClass().addClass("glyphicon glyphicon-chevron-right");
+					flag2=true;
+				}
+			});
+		});
+	</script>
+</head>
+<!-- By_Haolichong2017.7.24 -->
+<body>
+	<div class="container">
+		<h2 class="page-header">Treeview菜单:</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="treeview">
+					<h4 class="bg-danger"><span class="glyphicon glyphicon-chevron-right"></span> Actions speak louder than words.</h4>
+					<ul>
+						<li><a href="#">项目一</a></li>
+						<li><a href="#">项目二</a></li>
+						<li><span id="innerspan" class="glyphicon glyphicon-chevron-right"></span><a href="#">项目三</a></li>
+						<li>
+							<ul>
+								<li>二级treeview</li>
+								<li>二级treeview</li>
+								<li>二级treeview</li>
+							</ul>
+						</li>
+					</ul>
+					<h4 class="bg-success"><span class="glyphicon glyphicon-chevron-right"></span> When you fall down</h4>
+					<ul>
+						<li><a href="#">you just gotta get back</a></li>
+						<li><a href="#">and keep on going,</a></li>
+						<li><a href="#">there is no sense in just sitting in.</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- By_Haolichong2017.7.24 -->
+</html>

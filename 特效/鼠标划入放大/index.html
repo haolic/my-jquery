@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标划入放大</title>
+	<style>
+		p{
+			border-bottom: 1px solid #000;
+			padding: 15px;
+		}
+		.content{
+			width: 300px;
+			height: 500px;
+			background: #31b0d5;
+			margin: 0 auto;
+			text-align: center;
+		}
+		img{
+			width: 280px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("img").mouseover(function(){
+				$(this).animate({"width":"300px"},100,"swing");
+			})
+			$("img").mouseout(function(){
+				$(this).animate({"width":"280px"},100,"swing");
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<p>Actions speak louder than words.</p>
+			<p>When you fall down, you just gotta get back up and keep on going, there is no sense in just sitting in.</p>
+			<img src="img/dog-1.png" alt="汪汪">
+		</div>
+	</div>
+</body>
+</html>

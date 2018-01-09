@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉动画菜单</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		body{
+			font: 20px 微软雅黑;
+		}
+		p{
+			padding: 10px;
+			margin: 0px;
+			border-radius: 10px;
+		}
+		p:hover{
+			background: #2a5696;
+		}
+		ul{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+			position: absolute;
+			width: 100%;
+			display: none;
+		}
+		ul li{
+			margin-top: 1px;
+			border-radius: 10px;
+		}
+		ul li:hover{
+			background: #17a05d;
+		}
+		.menu{
+			width: 100%;
+			text-align: center;
+			position: relative;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$("p").mouseenter(function(){
+				$(this).next().stop().slideDown(100).end().parent().parent().siblings().children("div").children("ul").stop().slideUp(100);
+			});
+			$("div.menu").mouseleave(function(){
+				$(this).children("ul").stop().slideUp(100);
+			});
+		});
+	</script>
+</head>
+<!-- By_Haolichong2017.7.24 -->
+<body>
+	<div class="container">
+		<h2 class="page-header">下滑菜单:</h2>
+		<div class="row">
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul>
+						<li class="bg-success">项目1</li>
+						<li class="bg-success">项目2</li>
+						<li class="bg-success">项目3</li>
+						<li class="bg-success">项目4</li>
+					</ul>					
+				</div>
+			</div>	
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul>
+						<li class="bg-success">项目1</li>
+						<li class="bg-success">项目2</li>
+						<li class="bg-success">项目3</li>
+						<li class="bg-success">项目4</li>
+						<li class="bg-success">项目5</li>
+						<li class="bg-success">项目6</li>
+					</ul>					
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div class="menu">
+					<p class="bg-primary">标题1</p>
+					<ul>
+						<li class="bg-success">项目1</li>
+						<li class="bg-success">项目2</li>
+						<li class="bg-success">项目3</li>
+						<li class="bg-success">项目4</li>
+					</ul>					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- By_Haolichong2017.7.24 -->
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkbox反选</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function(){
+			$("#btn").click(function(){
+				$("#c1").prop('checked',!$("#c1").prop('checked'))
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="checkbox" id="c1">
+	<button id="btn">反选</button>
+</body>
+</html>
